@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .loading-container {
+            text-align: center;
+        }
+        .rocket {
+            font-size: 50px;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        .moon {
+            font-size: 30px;
+            margin: 0 5px;
+            display: inline-block;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Redirect to the desired page after a delay (5 seconds in this example)
+        setTimeout(function() {
+            window.location.href = "go/luna.html";
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="moon">🌕</div>
+        <div class="moon">🌖</div>
+        <div class="rocket">🚀</div>
+        <div class="moon">🌗</div>
+        <div class="moon">🌑</div>
+        <div class="message">
+            Project Luna better than Project Space
+        </div>
+    </div>
+</body>
+</html>
