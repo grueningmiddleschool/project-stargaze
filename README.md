@@ -1,1 +1,2 @@
-# project-luna
+# _***PROJECT LUNA***_
+BETA 1.0
