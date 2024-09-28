@@ -48,15 +48,49 @@
         }
         .message {
             margin-top: 20px;
-            font-size: 16px;
+            font-size: 24px;
             font-weight: bold;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            width: 0;
+            animation: typing 5s steps(30, end) forwards, blink 0.5s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 15em }
+        }
+        @keyframes blink {
+            50% { border-color: transparent }
         }
     </style>
     <script>
+        // Countdown text array
+        const countdownText = ['5', '4', '3', '2', '1', 'Blastoff!'];
+        
+        // Function to type the countdown text
+        function typeCountdown() {
+            const messageDiv = document.querySelector('.message');
+            let index = 0;
+
+            function type() {
+                if (index < countdownText.length) {
+                    messageDiv.textContent = countdownText[index++];
+                    setTimeout(type, 1000); // Wait 1 second before displaying the next number
+                }
+            }
+            
+            type();
+        }
+
         // Redirect to the desired page after a delay (5 seconds in this example)
         setTimeout(function() {
             window.location.href = "go/luna.html";
-        }, 5000);
+        }, 6000);
+
+        // Start typing the countdown on page load
+        window.onload = typeCountdown;
     </script>
 </head>
 <body>
@@ -66,9 +100,7 @@
         <div class="rocket">🚀</div>
         <div class="moon">🌗</div>
         <div class="moon">🌑</div>
-        <div class="message">
-            Project Luna better than Project Space
-        </div>
+        <div class="message"></div>
     </div>
 </body>
 </html>
