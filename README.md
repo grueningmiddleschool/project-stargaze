@@ -1,2 +1,2 @@
-# _***PROJECT LUNA***_
+# _***PROJECT STARGAZE***_
 BETA 1.0
