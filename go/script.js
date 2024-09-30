@@ -1,14 +1,14 @@
-const toggleThemeButton = document.getElementById('toggle-theme');
-const bodyElement = document.body;
+// Dark Mode Toggle Function
+const modeToggle = document.getElementById('modeToggle');
 
-toggleThemeButton.addEventListener('click', () => {
-    bodyElement.classList.toggle('dark-mode');
-    
-    const elementsToToggle = document.querySelectorAll(
-        'header, .hero, .cta, .features, footer, nav ul li a, nav ul li button'
-    );
-    
-    elementsToToggle.forEach((el) => {
-        el.classList.toggle('dark-mode');
-    });
+modeToggle.addEventListener('click', () => {
+    const body = document.body;
+    body.classList.toggle('light-mode');
+
+    // Change button text based on mode
+    if (body.classList.contains('light-mode')) {
+        modeToggle.textContent = '🌑 Dark Mode';
+    } else {
+        modeToggle.textContent = '🌙 Light Mode';
+    }
 });
